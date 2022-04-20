@@ -25,10 +25,16 @@ def build_vocab(corpus_tokens):
 
     return vocab
 
+def assign_vocab_index(vocab):
+    vocab_index = {}
+    for i,token in enumerate(vocab):
+        vocab_index[token] = i
+    return vocab_index
+
 if __name__ == "__main__":
     corpus = [
         'he is a king!',
-        'she is a queen',
+        'she is a queen and she is beautiful',
         'is he a man?',
         'she is a woman',
         'warsaw is poland capital',
@@ -36,4 +42,6 @@ if __name__ == "__main__":
         'paris is france capital',
         'he paid 100$'
     ]
-    print(build_vocab(tokenize(corpus)))
+    tokens = tokenize(corpus)
+    vocab = build_vocab(tokens)
+    vocab_index = assign_vocab_index(vocab)
