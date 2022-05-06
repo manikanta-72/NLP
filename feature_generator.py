@@ -2,7 +2,8 @@ from tokenizer import tokenize, build_vocab, assign_vocab_index
 
 def bagOfWords(vocab_index, vocab, tokens):
     """
-    This uses summation not or operator. 
+    This uses summation not or operator.
+    ToDo: handler for tokens not found in vocab
     """
     bow = []
     for doc in tokens:
